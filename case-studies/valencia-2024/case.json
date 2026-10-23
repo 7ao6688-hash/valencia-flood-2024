@@ -1,0 +1,10 @@
+{
+  "event": "29 October 2024 DANA flash flood, Valencia (L'Horta Sud and the Albufera)",
+  "title": "Valencia DANA flood, October 2024",
+  "pre_scene": "LC08_L2SP_198033_20240928_02_T1",
+  "post_scene": "LC08_L2SP_198033_20241030_02_T1",
+  "labels": ["Before: Landsat 8, 28 September 2024", "After: Landsat 8, 30 October 2024 (one day after)"],
+  "bbox_lonlat": [-0.52, 39.28, -0.30, 39.50],
+  "threshold": null,
+  "buildings_source": "OpenStreetMap contributors, Geofabrik 'valencia' extract (ODbL)"
+}

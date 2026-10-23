@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: Valencia DANA Flood, October 2024
+message: If you use this software, please cite this repository.
+type: software
+authors:
+  - family-names: Liu
+    given-names: Xiaoqiao
+version: 1.0.0
+date-released: 2026-10-23
+license: MIT
+repository-code: https://github.com/7ao6688-hash/valencia-flood-2024
+

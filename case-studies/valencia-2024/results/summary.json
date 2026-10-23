@@ -1,0 +1,57 @@
+{
+  "event": "29 October 2024 DANA flash flood, Valencia (L'Horta Sud and the Albufera)",
+  "pre_scene": "LC08_L2SP_198033_20240928_02_T1",
+  "post_scene": "LC08_L2SP_198033_20241030_02_T1",
+  "bbox_lonlat": [
+    -0.52,
+    39.28,
+    -0.3,
+    39.5
+  ],
+  "pixel_m": 30.0,
+  "clear_fraction_both": 0.914,
+  "threshold": 0.05,
+  "threshold_method": "Otsu on post-event MNDWI (clear pixels)",
+  "flooded_km2": 67.23,
+  "buildings": 191,
+  "buildings_in_aoi": 79181,
+  "exposed_footprint_km2": 0.038,
+  "buildings_source": "OpenStreetMap contributors, Geofabrik 'valencia' extract (ODbL)",
+  "sensitivity": [
+    {
+      "threshold": -0.1,
+      "flooded_km2": 98.58,
+      "buildings": 2089
+    },
+    {
+      "threshold": -0.05,
+      "flooded_km2": 80.95,
+      "buildings": 710
+    },
+    {
+      "threshold": -0.0,
+      "flooded_km2": 72.62,
+      "buildings": 298
+    },
+    {
+      "threshold": 0.05,
+      "flooded_km2": 67.2,
+      "buildings": 191
+    },
+    {
+      "threshold": 0.1,
+      "flooded_km2": 62.25,
+      "buildings": 136
+    },
+    {
+      "threshold": 0.15,
+      "flooded_km2": 56.93,
+      "buildings": 92
+    },
+    {
+      "threshold": 0.2,
+      "flooded_km2": 50.68,
+      "buildings": 63
+    }
+  ]
+}
