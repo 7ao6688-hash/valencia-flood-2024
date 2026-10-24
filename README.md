@@ -23,9 +23,44 @@ The water mapped here covers the rice paddies and fields around the Albufera, th
 
 ### Why so few buildings?
 
-The worst-hit towns (Paiporta, Catarroja, Alfafar…) drained within hours and were left under mud. In the 30 October image their streets read as wet soil, not open water, and at 30 m resolution a narrow flooded street is mixed with roofs anyway. **Optical water indices measure standing water at the moment of the overpass, not everywhere that flooded.** The building figure is therefore a lower bound. Mapping urban flood impact properly needs SAR (Sentinel-1 coherence change), very-high-resolution imagery, or the official Copernicus EMS EMSR773 delineation.
+The worst-hit towns (Paiporta, Catarroja, Alfafar…) drained within hours and were left under mud. In the 30 October image their streets read as wet soil, not open water, and at 30 m resolution a narrow flooded street is mixed with roofs anyway. **Optical water indices measure standing water at the moment of the overpass, not everywhere that flooded.** The building figure is therefore a lower bound. The Sentinel-1 section below shows a small but consistent radar signal over these towns; mapping urban impact street by street still needs very-high-resolution imagery or the official Copernicus EMS EMSR773 delineation.
 
 ![Threshold sensitivity](case-studies/valencia-2024/results/threshold_sensitivity.png)
+
+## Sentinel-1 radar: through the cloud, and over time
+
+Radar doesn't need sunlight or clear skies. Calm water mirrors the pulse away from the satellite, so flooded fields turn dark. The same study area was mapped from Sentinel-1 (VV, descending orbit 110), comparing **20 October with 1 November 2024**, the first radar pass after the flood.
+
+![Sentinel-1 flood map compared with Landsat](case-studies/valencia-2024/results/sar_overview.png)
+
+| | Value |
+|---|---:|
+| Open floodwater on 1 Nov (radar) | **42.1 km²** |
+| Landsat flood (30 Oct) still under water on 1 Nov | 38.6 km² (**57%**) |
+| Water seen only by radar | 3.5 km² |
+| Open floodwater on 6 Nov (orbit 8, 25 Oct → 6 Nov) | **13.9 km²** |
+
+The two sensors agree on where the large bodies of water were: the paddies north and south of the Albufera. Over the following week the radar shows the water draining, from 67 km² on 30 October (Landsat) to 42 km² on 1 November and 14 km² on 6 November.
+
+![Recession timeline](case-studies/valencia-2024/results/sar_timeline.png)
+
+**What radar adds in the towns.** Open-water mapping misses the worst-hit towns, because they had already drained. Radar, however, shows that their buildings brightened by **+0.8 to +1.4 dB**, compared with +0.25 to +0.55 dB in unflooded parts of València. The likely cause is mud, debris and wet walls strengthening the double-bounce return. It's a consistent but small signal, too weak to classify street by street at 30 m, so it is reported per town rather than mapped.
+
+![Change in radar backscatter in flooded and comparison towns](case-studies/valencia-2024/results/sar_towns.png)
+
+| Radar step | Detail |
+|---|---|
+| Data | Sentinel-1 RTC (radiometrically terrain-corrected γ⁰, 10 m) from Microsoft Planetary Computer, averaged onto the 30 m Landsat grid. Two frames per pass are mosaicked |
+| Speckle | 3 × 3 mean filter in linear power |
+| Threshold | Otsu on post-event VV in dB (−12.3 dB) |
+| New water | Dark after, not dark before, **and** at least 3 dB darker. Permanent water (sea, lake) is dark on both dates and drops out |
+| Towns | Median VV change under OpenStreetMap building centres within 1 km of each town centre |
+
+```bash
+flood-map-sar case-studies/valencia-2024/case.json --buildings path/to/gis_osm_buildings_a_free_1.shp
+```
+
+The 6 November figure uses a different orbit (8) and its own pre-event image (25 October), and covers 83% of the area, so read it as a trend, not an exact like-for-like measurement.
 
 ## Method
 
@@ -61,4 +96,4 @@ The original MSc coursework (University of Southampton, 2025) looked at built-up
 
 ## Data and licences
 
-Landsat 8 courtesy of the U.S. Geological Survey, accessed via Microsoft Planetary Computer. Building footprints © OpenStreetMap contributors (ODbL). Code: MIT, see [LICENSE](LICENSE).
+Landsat 8 courtesy of the U.S. Geological Survey; Copernicus Sentinel-1 data 2024 (RTC product); both accessed via Microsoft Planetary Computer. Building footprints © OpenStreetMap contributors (ODbL). Code: MIT, see [LICENSE](LICENSE).

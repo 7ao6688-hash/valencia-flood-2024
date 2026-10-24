@@ -3,8 +3,94 @@
   "title": "Valencia DANA flood, October 2024",
   "pre_scene": "LC08_L2SP_198033_20240928_02_T1",
   "post_scene": "LC08_L2SP_198033_20241030_02_T1",
-  "labels": ["Before: Landsat 8, 28 September 2024", "After: Landsat 8, 30 October 2024 (one day after)"],
-  "bbox_lonlat": [-0.52, 39.28, -0.30, 39.50],
+  "labels": [
+    "Before: Landsat 8, 28 September 2024",
+    "After: Landsat 8, 30 October 2024 (one day after)"
+  ],
+  "bbox_lonlat": [
+    -0.52,
+    39.28,
+    -0.3,
+    39.5
+  ],
   "threshold": null,
-  "buildings_source": "OpenStreetMap contributors, Geofabrik 'valencia' extract (ODbL)"
+  "buildings_source": "OpenStreetMap contributors, Geofabrik 'valencia' extract (ODbL)",
+  "sentinel1": {
+    "pre": {
+      "label": "20 Oct 2024",
+      "frames": [
+        "S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_rtc",
+        "S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_rtc"
+      ]
+    },
+    "post": {
+      "label": "1 Nov 2024",
+      "frames": [
+        "S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_rtc",
+        "S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_rtc"
+      ]
+    },
+    "followup": {
+      "recession": {
+        "label": "6 Nov 2024",
+        "frames": [
+          "S1A_IW_GRDH_1SDV_20241106T061016_20241106T061041_056430_06EA4C_rtc",
+          "S1A_IW_GRDH_1SDV_20241106T061041_20241106T061106_056430_06EA4C_rtc"
+        ],
+        "pre_frames": [
+          "S1A_IW_GRDH_1SDV_20241025T061016_20241025T061041_056255_06E360_rtc"
+        ]
+      }
+    },
+    "threshold_db": null,
+    "min_drop_db": 3.0,
+    "towns": {
+      "Paiporta": [
+        -0.418,
+        39.428,
+        true
+      ],
+      "Catarroja": [
+        -0.403,
+        39.402,
+        true
+      ],
+      "Alfafar": [
+        -0.389,
+        39.422,
+        true
+      ],
+      "Massanassa": [
+        -0.399,
+        39.411,
+        true
+      ],
+      "Sedaví": [
+        -0.384,
+        39.427,
+        true
+      ],
+      "Benetússer": [
+        -0.396,
+        39.423,
+        true
+      ],
+      "València centre": [
+        -0.376,
+        39.47,
+        false
+      ],
+      "Mislata": [
+        -0.418,
+        39.475,
+        false
+      ],
+      "Benimaclet (València)": [
+        -0.36,
+        39.487,
+        false
+      ]
+    },
+    "source": "Sentinel-1 RTC (gamma0, radiometrically terrain corrected) via Microsoft Planetary Computer; Copernicus Sentinel data 2024"
+  }
 }

@@ -1,0 +1,78 @@
+{
+  "pre": "20 Oct 2024",
+  "post": "1 Nov 2024",
+  "threshold_db": -12.28,
+  "threshold_method": "Otsu on post-event VV (dB)",
+  "min_drop_db": 3.0,
+  "flooded_km2": 42.1,
+  "agreement_with_landsat": {
+    "both_km2": 38.58,
+    "landsat_only_km2": 28.65,
+    "radar_only_km2": 3.52,
+    "share_of_landsat_flood_confirmed_by_radar": 0.574
+  },
+  "followup": {
+    "recession": {
+      "label": "6 Nov 2024",
+      "flooded_km2": 13.89,
+      "observed_share": 0.831
+    }
+  },
+  "buildings": 21,
+  "urban_vv_change": [
+    {
+      "town": "Paiporta",
+      "hit_by_flood": true,
+      "buildings": 1346,
+      "median_vv_change_db": 1.01
+    },
+    {
+      "town": "Catarroja",
+      "hit_by_flood": true,
+      "buildings": 1071,
+      "median_vv_change_db": 1.07
+    },
+    {
+      "town": "Alfafar",
+      "hit_by_flood": true,
+      "buildings": 1102,
+      "median_vv_change_db": 0.84
+    },
+    {
+      "town": "Massanassa",
+      "hit_by_flood": true,
+      "buildings": 1746,
+      "median_vv_change_db": 1.38
+    },
+    {
+      "town": "Sedaví",
+      "hit_by_flood": true,
+      "buildings": 775,
+      "median_vv_change_db": 0.96
+    },
+    {
+      "town": "Benetússer",
+      "hit_by_flood": true,
+      "buildings": 1160,
+      "median_vv_change_db": 0.87
+    },
+    {
+      "town": "València centre",
+      "hit_by_flood": false,
+      "buildings": 4607,
+      "median_vv_change_db": 0.25
+    },
+    {
+      "town": "Mislata",
+      "hit_by_flood": false,
+      "buildings": 608,
+      "median_vv_change_db": 0.25
+    },
+    {
+      "town": "Benimaclet (València)",
+      "hit_by_flood": false,
+      "buildings": 1822,
+      "median_vv_change_db": 0.55
+    }
+  ]
+}
